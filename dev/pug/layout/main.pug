@@ -1,0 +1,26 @@
+include ../mixins
+include ../../bemto/bemto
+block variables
+
+doctype html
+html(lang="ru-RU" class=stickyClass)
+	block head
+		head
+			meta(charset="utf-8")
+			title #{title}
+			<!--[if IE]>
+			meta(http-equiv='X-UA-Compatible', content="IE = edge")
+			<![endif]-->
+			meta(name="viewport" content="width=device-width,initial-scale=1")
+			meta(name="keywords" content="")
+			link(rel="shortcut icon" href="img/favicon.png" type="image/x-icon")
+			link(rel="stylesheet" type='text/css' href="css/main.css")
+
+			<!--[if lt IE 9]>
+			script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+			<![endif]-->
+	body(class=pageClass)
+		block main
+		script(src="js/libs.min.js")
+		script(src="js/main.js")
+		block script

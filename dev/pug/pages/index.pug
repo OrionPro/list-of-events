@@ -1,0 +1,49 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index'
+
+block main
+	// Секция list-of-events
+	+b.SECTION.list-of-events
+		.container
+			.row
+				.col-12
+					+e.select-wrap
+						.select
+							.select__arrow
+								i
+									i.fas.fa-angle-down
+							a.select__link(href="#") #[span Дата:]
+							ul.select__drop
+								li
+									span.no-date-events нет мероприятий
+							input(type="hidden" name="services")
+			+e.items.row
+	// Секция add-event
+	+b.SECTION.add-event
+		.container
+			.row.justify-content-center
+				.col-12.col-md-8.col-lg-7
+					+e.title
+						h3 Добавить мероприятие
+					+e.FORM.form
+						+e.input-items
+							+e.input-item
+								label(for="add-event-name" class="add-event__input-label") Название
+								input.main-input(id="add-event-name" class="add-event__input")
+							+e.input-item
+								label(for="add-event-date" class="add-event__input-label") Дата
+								input.main-input(id="add-event-date" class="add-event__input add-event__date datepicker" autocomplete="off")
+							+e.input-item
+								label(for="add-event-time-start" class="add-event__input-label") Время начала
+								input.main-input(id="add-event-time-start" class="add-event__input only-num")
+							+e.input-item
+								label(for="add-event-time-end" class="add-event__input-label") Время конца
+								input.main-input(id="add-event-time-end" class="add-event__input only-num")
+						+e.form-submit
+							button(class="main-btn" type="button") Добавить
+
+
+

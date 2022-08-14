@@ -1,0 +1,13 @@
+// Fonts mixin
+
+webfont(family, folder, file, weight = normal, style = normal)
+	@font-face
+		font-family family
+		src url('../fonts/' + folder + '/' + file + '.eot')
+		src url('../fonts/' + folder + '/' + file + '.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/' + folder + '/' + file + '.woff') format('woff'),
+		url('../fonts/' + folder + '/' + file + '.ttf') format('truetype')
+		font-weight weight
+		font-style style
+
+webfont('RobotoRegular', 'RobotoRegular', 'RobotoRegular')

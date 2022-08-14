@@ -504,7 +504,7 @@ $(document).ready(function () {
 						// удаляем лишку с датой, которую удаляем, из селекта (и в массиве лишек тоже удаляем)
 						// удаляем с помощью мутации массива arrSelectLi с использованием reverse()
 						arrSelectLi.slice().reverse().forEach(function(item, index, object) {
-							if (parseInt(item.querySelector('span').textContent) === parseInt(targetDate)) {
+							if (item.querySelector('span').textContent === targetDate) {
 								arrSelectLi.splice(object.length - 1 - index, 1);
 								item.remove();
 							}
